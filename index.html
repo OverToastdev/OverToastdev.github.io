@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprise!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff7eb3, #ff758c);
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            color: white;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #ff5733;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #c70039;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        video {
+            display: none;
+            width: 80%;
+            height: 80%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="textContainer">
+        <h1>Click the Button Below!</h1>
+        <p>Trust me, it's something amazing.</p>
+        <button id="surpriseButton">Click Me</button>
+    </div>
+
+    <video id="rickrollVideo" controls autoplay loop>
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <script>
+        const button = document.getElementById('surpriseButton');
+        const textContainer = document.getElementById('textContainer');
+        const video = document.getElementById('rickrollVideo');
+
+        button.addEventListener('click', () => {
+            textContainer.style.display = 'none';
+            video.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
